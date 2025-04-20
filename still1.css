@@ -1,0 +1,343 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+height:auto;
+      margin: 0;
+    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20vh;
+  background: linear-gradient(to right, purple, blue);
+  width: 100%;
+  gap: 0;
+}
+
+.anamenu {
+  padding: 0 20px;
+  margin-right: auto;
+  margin-left: 0;
+  width: 20%;
+}
+
+.anamenu2 {
+  display: flex;
+  width: 80%;
+}
+
+nav {
+ display:flex;
+  width: 100%;
+gap:10px;
+justify-content:flex-end;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  transition: background 0.3s, color 0.3s;
+}
+
+li a:hover {
+  background: purple;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: visible; 
+margin:0;
+}
+article{
+margin:0;
+padding:20px;
+gap:10px;
+}
+
+.kutu1 {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+margin:10px 0 ;
+  flex-shrink: 0;
+}
+
+.z1 {
+  width: 20%;
+align-items:center;
+  flex-shrink: 0;
+  transition: all 0.3s ease; /* Tüm özelliklere transition ekledim */
+  position: relative; /* Hover efekti için */
+  overflow: hidden; /* Resim taşmalarını önler */
+  transition: transform 0.2s ease;
+}
+
+.z1 img {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+  display: block;
+border-radius:7px;
+}
+
+
+.y1 {
+  width: 70%;
+  flex-shrink: 0;
+  overflow-y: auto;
+  /* Temel transition (sadece transform için) */
+  transition: transform 0.2s ease;
+}
+
+.z1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.b1p {
+  word-break: keep-all;
+  padding: 10px; /* Okunabilirlik için padding ekledim */
+}
+
+.kutuxv{
+display:flex;
+width:100%;
+padding:
+gap:10px;
+margin:10px 0;
+
+}
+.kutux{
+width:70%;
+height:100%;
+margin-left:0;
+}
+.kutuv{
+width:30%;
+height:300px;
+height:100%;
+margin-right:0;
+}
+
+.kutuv img {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+  display: block;
+border-radius:7px;
+}
+.tipmerkezleri {
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(to right, purple, blue);
+  padding: 10px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  display: flex; /* Ekledim - container'ı flex yapıyoruz */
+  justify-content: center; /* Ekledim - yatayda ortalamak için */
+}
+
+.kutut {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  height: 100%; /* Ekledim - yüksekliği tam kullanması için */
+transition: transform 3s ease;
+
+}
+
+.kutut img {
+  width: calc((100% - 30px) / 4); /* 4 resim için eşit genişlik */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%;
+  flex-shrink: 0;
+}
+
+    .kutu2 {
+   width: 100%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px; /* Kutular arası boşluk */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.kutu2 {
+  position: relative; /* Kutu içindeki elementlerin pozisyonunu belirler */
+  height: 200px; /* Kutu yüksekliği */
+  overflow: hidden; /* Taşan içeriği gizler */
+  border: 1px solid #ccc; /* Kutuya kenarlık ekler (isteğe bağlı) */
+}
+
+.kutu2 p {
+  font-size: 1.2rem;
+  color: black;
+  position: relative; /* Elementlerin normal akışta olmasını sağlar */
+  animation-duration: 2s; /* Animasyon süresi */
+  animation-fill-mode: forwards; /* Animasyon bitiminde son durumu korur */
+  margin: 10px 0; /* Paragraflar arası boşluk */
+}
+
+.kutu2 .p1 {
+  animation-name: sagaKaydir; /* Sağdan kaydırma animasyonu */
+}
+
+.kutu2 .p2 {
+  animation-name: solaKaydir; /* Soldan kaydırma animasyonu */
+}
+
+@keyframes sagaKaydir {
+  0% {
+    transform: translateX(100%); /* Başlangıç: sağda gizli */
+
+  }
+  100% {
+    transform: translateX(0); /* Bitiş: normal pozisyon */
+ 
+  }
+}
+
+@keyframes solaKaydir {
+  0% {
+    transform: translateX(-100%); /* Başlangıç: solda gizli */
+    opacity: 0; /* Başlangıçta görünmez */
+  }
+  100% {
+    transform: translateX(0); /* Bitiş: normal pozisyon */
+    opacity: 1; /* Bitişte görünür */
+  }
+}
+.kutu3-container {
+  display: flex;
+  flex-wrap: nowrap; /* Öğeler satır içinde kalır */
+  justify-content: space-around; /* Öğeleri eşit aralıklarla hizalar */
+  align-items: center; /* Dikey hizalamayı ortalar */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.kutu3 {
+display:inline-flex;
+  width: calc(30% - 30px); /* 30% genişlik, margin hesaba katıldı */
+  margin: 0 15px; /* Kutular arasında boşluk bırakır */
+  overflow-wrap: break-word;
+  white-space: normal;
+  background-color: #7FFFD4;
+  padding: 40px;
+  border-radius: 50%;
+  border-top: 10px solid transparent;
+  transition: border 2s ease-in-out;
+  text-align: center; /* İçeriği ortalar */
+}
+
+.kutu3:hover {
+  border-top: 10px solid yellow;
+}
+
+
+.kutu4 {
+margin:20px 0;
+  box-sizing: border-box; /* Padding ve border, elementin genişliği ve yüksekliği içine dahil edilir */
+  position: relative; /* Kutu içindeki elementlerin pozisyonunu belirler */
+  height: auto; /* Kutunun yüksekliği */
+  overflow: hidden; /* Taşan içeriği gizler */
+  border: 1px solid #ccc; /* Kutunun kenarlığı */
+   background: linear-gradient(to right, yellow, green);/* Arka plan rengi değişir */ /* Kutunun arka plan rengi */
+  padding: 15px 10px; /* Üst-alt: 15px, Sağ-sol: 10px */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+  transition: background-color 3s ease-in-out; /* Arka plan rengi animasyonu */
+}
+
+.kutu4 p {
+  font-size: 1.2rem; /* Paragrafın yazı boyutu */
+  color: black; /* Paragrafın yazı rengi */
+  margin: 10px 5px; /* Paragrafın üst-alt boşluğu: 10px, sağ-sol boşluğu: 5px */
+  opacity: 0; /* Başlangıçta paragraf görünmez */
+  transform: translateY(20px) scale(0.95); /* Başlangıçta 20px aşağıda ve hafifçe küçük */
+  transition: opacity 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Animasyon süresi ve easing fonksiyonu */
+}
+
+.kutu4.visible {
+ background: linear-gradient(to right, yellow, green);/* Arka plan rengi değişir */
+}
+
+.kutu4.visible p {
+  opacity: 1; /* Paragraf görünür hale gelir */
+  transform: translateY(0) scale(1); /* Normal pozisyonuna döner ve hafifçe büyür */
+}
+
+.kutu4.visible {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Gölge efekti artar */
+}
+/*
+  .visible sınıfı eklendiğinde, paragraf 3 saniyede yavaşça görünür hale gelir, yukarı kayar ve hafifçe büyür.
+  Ayrıca, arka plan rengi de yumuşak bir geçişle değişir.
+*/
+.kutu5 {
+color:black;
+margin: 20px 10px;
+  display: block; /* Kutu blok şeklinde görünsün */
+  background-color: #7FFFD4 ;
+  padding: 25px ; /* İç boşluk */
+  width: 100%; /* Kutu genişliği */
+  border-radius: 7px; /* Köşeleri yuvarlak yap */
+  position: relative; /* Göreceli pozisyonlandırma */
+  overflow: hidden; /* Taşan içeriği gizle */
+text-align:center;
+align-items:center;
+}
+
+.a1 {
+  position: absolute; /* Elementleri üst üste bindir */
+  top: 10px; /* Üst boşluk */
+  left: 10px; /* Sol boşluk */
+  right: 10px; /* Sağ boşluk */
+  opacity: 0; /* Başlangıçta görünmez */
+  transform: translateX(-100%); /* Başlangıçta sola kaydır */
+  transition: opacity 1s ease-in-out, transform 2s ease-in-out; /* Geçiş efekti */
+  z-index: 1; /* Elementlerin sıralamasını belirle */
+
+}
+
+
+
+    footer {
+      height: 20vh;
+ background: linear-gradient(to right, #6a1b9a, #1a237e); /* Arka plan gradient */
+      display: flex;
+      color: white;
+      font-size: 1.2rem;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0;
+    }
+
+.footeryazi {
+  color: white; /* Yazı rengi beyaz */
+  text-shadow: 
+   
+    0 2px 4px rgba(128, 128, 128, 0.6); /* İkinci katman (daha belirgin) */
+  font-size: 16px;
+  font-weight: normal; /* Kalınlık ayarı */
+  display: inline; /* Arkaplanı etkilemez */
+}
