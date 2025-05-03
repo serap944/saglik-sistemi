@@ -64,7 +64,7 @@ main {
   overflow: visible; 
 margin:0;
 }
-article{
+.klinikKarti{
 margin:0;
 padding:20px;
 gap:10px;
@@ -315,10 +315,7 @@ align-items:center;
   transform: translateX(-100%); /* Başlangıçta sola kaydır */
   transition: opacity 1s ease-in-out, transform 2s ease-in-out; /* Geçiş efekti */
   z-index: 1; /* Elementlerin sıralamasını belirle */
-
 }
-
-
 
     footer {
       height: 20vh;
@@ -341,3 +338,15 @@ margin:0;
   font-weight: normal; /* Kalınlık ayarı */
   display: inline; /* Arkaplanı etkilemez */
 }
+
+@media (max-width:768) {
+.kutu1{
+display:block;
+width:95%;
+}
+.z1 .y1 {
+margin:0;
+padding:10px;
+
+}
+
