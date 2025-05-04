@@ -9,20 +9,20 @@
 </head>
 <body>
   <header>
-    <div class="anamenu">
-      <h1>Lotus Çiçeği</h1> tıp merkezleri hakkında bilgi</div>
-
-<div class="anamenu2">
+    <div class="header-container">
+      <h1>Lotus Çiçeği</h1>
       <nav>
-  <li><a href="#"><i class="fas fa-home"></i> Anasayfa</a></li>
-  <li><a href="#"><i class="far fa-info-circle"></i> Hakkımızda</a></li>
-  <li><a href="#"><i class="fas fa-phone-alt"></i> İletişim</a></li>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> Anasayfa</a></li>
+          <li><a href="#"><i class="far fa-info-circle"></i> Hakkımızda</a></li>
+          <li><a href="#"><i class="fas fa-phone-alt"></i> İletişim</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main>
-<article>
+    <article>
       <div class="kutu1">  
 <div class="z1">
 <img src="images/dissagligi1.jpg" alt="Doğa 1"></div>
@@ -170,70 +170,43 @@ Unutmayın, diş sağlığı genel vücut sağlığının aynasıdır. "Önlemin
 
     </article>
   </main>
-<footer> <p class="footeryazi">
-bilgi vermeyi amaçlayan bir websiteyiz.
-</p>
-</footer>
-   
-</body>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Sayfa yüklendiğinde bu fonksiyon çalışır (DOMContentLoaded event'i).
-  const kutu4 = document.querySelector('.kutu4'); // .kutu4 elementini seçer.
 
-  const gozlemci = new IntersectionObserver((girisler) => {
-    // IntersectionObserver, .kutu4 elementinin görünür alana girip çıktığını takip eder.
-    girisler.forEach(giris => {
-      if (giris.isIntersecting) {
-        // Eğer element görünür alana girdiyse:
-        kutu4.classList.add('visible'); // .visible sınıfını ekler.
-      } else {
-        // Eğer element görünür alandan çıktıysa:
-        kutu4.classList.remove('visible'); // .visible sınıfını kaldırır.
-      }
+  <footer>
+    <p>Bilgi vermeyi amaçlayan bir websitesiyiz.</p>
+  </footer>
+
+  <script>
+// Optimize Edilmiş JavaScript
+document.addEventListener("DOMContentLoaded", () => {
+  // Kutu4 Animasyonu
+  const kutu4 = document.querySelector('.kutu4');
+  new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('visible', entry.isIntersecting);
     });
-  }, {
-    threshold: 0.6 // Elementin %60'ı görünür olduğunda tetikleme yapar.
-  });
+  }, { threshold: 0.5 }).observe(kutu4);
 
-  gozlemci.observe(kutu4); // .kutu4 elementini gözlemlemeye başlar.
+  // Kutu5 Slider
+  const kutu5Items = document.querySelectorAll('.kutu5 .a1');
+  let activeIndex = 0;
+  const showNextItem = () => {
+    kutu5Items[activeIndex].classList.remove('active');
+    activeIndex = (activeIndex + 1) % kutu5Items.length;
+    kutu5Items[activeIndex].classList.add('active');
+  };
+  setInterval(showNextItem, 3000);
+  kutu5Items[0].classList.add('active');
+
+  // Resim Slider
+  const slider = document.querySelector('.kutut');
+  let slideIndex = 0;
+  const slide = () => {
+    slideIndex = (slideIndex + 1) % (document.querySelectorAll('.kutut img').length - 3);
+    slider.style.transform = `translateX(-${slideIndex * 25}%)`;
+  };
+  setInterval(slide, 3000);
 });
 
-const elements = document.querySelectorAll('.kutu5 .a1'); // Tüm .a1 elementlerini seç
-let index = 0; // Başlangıç index'i
-
-function sirayla() {
-  // Tüm elementleri gizle
-  elements.forEach((element) => {
-    element.style.opacity = 0;
-    element.style.visibility = 'hidden';
-    element.style.transform = 'translateX(-100%)';
-  });
-
-  // Şu anki elementi göster
-  elements[index].style.opacity = 1;
-  elements[index].style.visibility = 'visible';
-  elements[index].style.transform = 'translateX(0)';
-
-  // Bir sonraki element için index'i güncelle
-  index = (index + 1) % elements.length;
-}
-
-// İlk elementi göster
-sirayla();
-
-// Belirli aralıklarla fonksiyonu çağır
-setInterval(sirayla, 7000); // 3 saniyede bir
-
-let baslama=0;
-const resimler=document.querySelectorAll(".kutut img");
-const kutut= document.querySelector(".kutut");
-
-function dongu(){
-baslama=(baslama + 1) % (resimler.length - 4 + 1);
-const kayma=baslama * (100 / 4);
-kutut.style.transform=`translateX(-${kayma}%)`;
-}
-setInterval (dongu, 3000);
 </script>
+</body>
 </html>
