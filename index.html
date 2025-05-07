@@ -116,16 +116,16 @@ Hareketli Protez: Tam dişsizlik durumunda tercih edilir.<br>
 </div></div>
 
 <div class="tipmerkezleri">
-<div class="kutut">
-<img src="images/merkez1.jpeg" alt="resim1">
-<img src="images/merkez2.jpeg" alt="resim1">
-<img src="images/merkez3.jpeg" alt="resim1">
-<img src="images/merkez4.jpeg" alt="resim1">
-<img src="images/merkez5.jpeg" alt="resim1">
-<img src="images/merkez6.jpeg" alt="resim1">
-<img src="images/merkez7.jpeg" alt="resim1">
-
-</div></div>
+  <div class="kutut">
+    <img src="images/merkez1.jpeg" alt="Merkez 1" class="aktif">
+    <img src="images/merkez2.jpeg" alt="Merkez 2">
+    <img src="images/merkez3.jpeg" alt="Merkez 3">
+    <img src="images/merkez4.jpeg" alt="Merkez 4">
+    <img src="images/merkez5.jpeg" alt="Merkez 5">
+    <img src="images/merkez6.jpeg" alt="Merkez 6">
+    <img src="images/merkez7.jpeg" alt="Merkez 7">
+  </div>
+</div>
 
         <div class="kutu2">
         <p class="p1">
@@ -175,38 +175,65 @@ Unutmayın, diş sağlığı genel vücut sağlığının aynasıdır. "Önlemin
     <p>Bilgi vermeyi amaçlayan bir websitesiyiz.</p>
   </footer>
 
-  <script>
-// Optimize Edilmiş JavaScript
-document.addEventListener("DOMContentLoaded", () => {
-  // Kutu4 Animasyonu
-  const kutu4 = document.querySelector('.kutu4');
-  new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle('visible', entry.isIntersecting);
-    });
-  }, { threshold: 0.5 }).observe(kutu4);
 
-  // Kutu5 Slider
-  const kutu5Items = document.querySelectorAll('.kutu5 .a1');
-  let activeIndex = 0;
-  const showNextItem = () => {
-    kutu5Items[activeIndex].classList.remove('active');
-    activeIndex = (activeIndex + 1) % kutu5Items.length;
-    kutu5Items[activeIndex].classList.add('active');
-  };
-  setInterval(showNextItem, 3000);
-  kutu5Items[0].classList.add('active');
-
-  // Resim Slider
+<script>
+document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.kutut');
-  let slideIndex = 0;
-  const slide = () => {
-    slideIndex = (slideIndex + 1) % (document.querySelectorAll('.kutut img').length - 3);
-    slider.style.transform = `translateX(-${slideIndex * 25}%)`;
-  };
-  setInterval(slide, 3000);
+  const images = document.querySelectorAll('.kutut img');
+  let currentIndex = 0;
+  let visibleItems = 4; // Varsayılan olarak 4 görünür resim
+  let interval;
+  
+  // Ekran boyutuna göre görüntülenecek resim sayısını belirle
+  function setVisibleItems() {
+    if (window.innerWidth <= 768) {
+      visibleItems = 1; // Mobilde 1 resim
+    } else {
+      visibleItems = 4; // Bilgisayarda 4 resim
+    }
+    updateSlider();
+  }
+  
+  // Slider'ı güncelle
+  function updateSlider() {
+    const itemWidth = 100 / visibleItems;
+    images.forEach(img => {
+      img.style.width = `${itemWidth}%`;
+    });
+    slider.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+  }
+  
+  // Bir sonraki slayta geç
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % (images.length - visibleItems + 1);
+    slider.style.transform = `translateX(-${currentIndex * (100 / visibleItems)}%)`;
+  }
+  
+  // Slider'ı başlat
+  function startSlider() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 3000); // 3 saniyede bir geçiş
+  }
+  
+  // İlk ayarları yap ve slider'ı başlat
+  setVisibleItems();
+  startSlider();
+  
+  // Pencere boyutu değiştiğinde yeniden ayarla
+  window.addEventListener('resize', function() {
+    setVisibleItems();
+  });
+  
+  // Fare slider üzerindeyken duraklat
+  slider.addEventListener('mouseenter', function() {
+    clearInterval(interval);
+  });
+  
+  // Fare slider'dan çıkınca devam et
+  slider.addEventListener('mouseleave', function() {
+    startSlider();
+  });
 });
-
 </script>
 </body>
 </html>
