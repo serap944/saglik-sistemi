@@ -78,6 +78,7 @@ h1 {
     display: block;
     margin-left: auto; /* Butonu sağa itiyoruz */
     order: 2; /* Butonu en sağa almak için */
+ background: rgba(26, 35, 126, 0.95) !important; /* %95 opak */
   }
   
   .main-nav {
