@@ -36,6 +36,27 @@
     </article>
   </main>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  
+  menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('active');
+    
+    // İkon değişimi (bars ↔ times)
+    const icon = this.querySelector('i');
+    if (mainNav.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+
+});
+</script>
 </body>
 
 </html>
