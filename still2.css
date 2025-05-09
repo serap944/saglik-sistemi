@@ -122,43 +122,6 @@ h1 {
   }
 }
 
-.anamenu {
-  padding: 0 20px;
-  margin-right: auto;
-  margin-left: 0;
-  width: 20%;
-}
-
-.anamenu2 {
-  display: flex;
-  width: 80%;
-}
-
-nav {
- display:flex;
-  width: 100%;
-gap:10px;
-justify-content:flex-end;
-}
-
-li {
-  list-style: none;
-}
-
-li a {
-  text-decoration: none;
-  padding: 7px 12px;
-  border-radius: 5px;
-  font-size: 16px;
-  color: white;
-  transition: background 0.3s, color 0.3s;
-}
-
-li a:hover {
-  background: purple;
-  color: white;
-}
-
 main{
 display:block;
 overflow:visible;
