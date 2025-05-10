@@ -185,12 +185,14 @@ margin:0;
 
       .kutu1, .kutu2 {
         width: 100%;
+     flex-wrap: wrap;
       }
 
       .kutu2 {
         margin-top: 1rem;
         order: -1;
-        min-height: 250px; /* Mobilde daha büyük resim alanı */
+        height: 250px; /* Mobilde daha büyük resim alanı */
+over-flow:hidden;
       }
 
       .kutu2 img {
