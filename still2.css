@@ -196,5 +196,22 @@ padding:10px;
   border-top-right-radius: 30%; /* Sağ üst köşe yuvarlak */
   border-bottom-right-radius: 30%; /* Sağ alt köşe yuvarlak */
 }
+@media (max-width: 768px) {
+article{display:block;
+margin:0;
+gap:1rem;
+}
+.kutu1{
+margin:0;
+padding:1rem;
+}
+.kutu2{
+margin:0;
+padding:1rem;
+}
+.kutu2 img{
+border-radius:7px;
+}
+}
 
 
