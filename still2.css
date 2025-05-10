@@ -197,6 +197,7 @@ padding:10px;
   border-bottom-right-radius: 30%; /* Sağ alt köşe yuvarlak */
 }
 @media (max-width: 768px) {
+
 article{display:block;
 margin:0;
 gap:1rem;
@@ -206,11 +207,16 @@ margin:0;
 padding:1rem;
 }
 .kutu2{
-margin:0;
+right:0;
+left:0;
+background-color:white;
 padding:1rem;
+
 }
 .kutu2 img{
 border-radius:7px;
+flex-shring:0;
+object-fit:cover;
 }
 }
 
