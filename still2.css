@@ -102,7 +102,6 @@ margin:0;
     }
 
        .kutu1 {
-      flex: 1;
 width:80%;
       padding: 1rem;
       background: white;
@@ -111,6 +110,7 @@ width:80%;
 
     .kutu2 {
       width: 20%;
+padding: 2rem;
       min-width: 250px; /* Minimum genişlik */
       position: relative;
       overflow: hidden; /* Taşan kısımları gizle */
@@ -131,7 +131,6 @@ width:80%;
     }
 
     .kutu1 .kutu1box {
-      margin: -1.5rem -1.5rem 1rem -1.5rem;
       padding: 1rem;
       background-color: #c795fc;
       border-top-right-radius: 30%;
