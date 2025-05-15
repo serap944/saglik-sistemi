@@ -33,12 +33,17 @@
       justify-content: space-between;
       align-items: center;
     }
+.header-container a {
+  color: white;
+  text-decoration: none;
+}
+
 
     h1 {
       color: white;
       font-size: clamp(1.5rem, 4vw, 2rem);
       margin: 0.5rem 0;
-text-decoration:none;
+
     }
 
     /* Ana Menü */
