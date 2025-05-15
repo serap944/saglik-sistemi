@@ -94,7 +94,8 @@
       display: flex;
       align-items: center;
       margin-bottom: 2rem;
-margin:0;
+right:0;
+left:0;
     }
 
     .yazi1 {
@@ -103,7 +104,7 @@ margin:0;
 
        .kutu1 {
 width:80%;
-      padding: 1rem;
+      padding:2rem;
       background: white;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
@@ -131,7 +132,6 @@ padding: 2rem;
     }
 
     .kutu1 .kutu1box {
-      padding: 1rem;
       background-color: #c795fc;
       border-top-right-radius: 30%;
       border-bottom-right-radius: 30%;
