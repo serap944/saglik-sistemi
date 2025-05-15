@@ -98,7 +98,8 @@ margin:0;
 
        .kutu1 {
       flex: 1;
-      padding: 20px;
+width:80%;
+      padding: 1rem;
       background: white;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
