@@ -29,6 +29,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  color:white;
 }
 
 h1 {
@@ -122,6 +123,7 @@ h1 {
   h1 {
     order: 1;
     margin-right: auto;
+    color:white;
   }
 }
 
