@@ -21,26 +21,21 @@ header {
   z-index: 100;
 }
 
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-.header-container a {
-  color: white;
-  text-decoration: none;
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-
-    h1 {
-      color: white;
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin: 0.5rem 0;
-
-    }
+h1 {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin: 0.5rem 0;
+}
 
 /* Ana menü stilleri */
 .main-nav ul {
