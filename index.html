@@ -151,26 +151,19 @@ Her 6 ayda bir diş hekiminizi ziyaret ederek:
   </footer>
 
 
-<script>
 document.addEventListener('DOMContentLoaded', function() {
-
+  // SLIDER
   const slider = document.querySelector('.kutut');
   const images = document.querySelectorAll('.kutut img');
   let currentIndex = 0;
-  let visibleItems = 4; // Varsayılan olarak 4 görünür resim
+  let visibleItems = 4;
   let interval;
   
-  // Ekran boyutuna göre görüntülenecek resim sayısını belirle
   function setVisibleItems() {
-    if (window.innerWidth <= 768) {
-      visibleItems = 1; // Mobilde 1 resim
-    } else {
-      visibleItems = 4; // Bilgisayarda 4 resim
-    }
+    visibleItems = window.innerWidth <= 768 ? 1 : 4;
     updateSlider();
   }
   
-  // Slider'ı güncelle
   function updateSlider() {
     const itemWidth = 100 / visibleItems;
     images.forEach(img => {
@@ -179,86 +172,70 @@ document.addEventListener('DOMContentLoaded', function() {
     slider.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
   }
   
-  // Bir sonraki slayta geç
   function nextSlide() {
-    currentIndex = (currentIndex + 1) % (images.length - visibleItems + 1);
+    const maxIndex = Math.max(images.length - visibleItems, 0);
+    currentIndex = (currentIndex + 1) % (maxIndex + 1);
     slider.style.transform = `translateX(-${currentIndex * (100 / visibleItems)}%)`;
   }
   
-  // Slider'ı başlat
   function startSlider() {
     clearInterval(interval);
-    interval = setInterval(nextSlide, 3000); // 3 saniyede bir geçiş
+    if (images.length > visibleItems) {
+      interval = setInterval(nextSlide, 3000);
+    }
   }
   
-  // İlk ayarları yap ve slider'ı başlat
   setVisibleItems();
   startSlider();
   
-  // Pencere boyutu değiştiğinde yeniden ayarla
   window.addEventListener('resize', function() {
     setVisibleItems();
+    startSlider();
   });
   
-  // Fare slider üzerindeyken duraklat
   slider.addEventListener('mouseenter', function() {
     clearInterval(interval);
   });
   
-  // Fare slider'dan çıkınca devam et
-  slider.addEventListener('mouseleave', function() {
-    startSlider();
+  slider.addEventListener('mouseleave', startSlider);
+
+  // MENU
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  const body = document.body;
+
+  menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('active');
+    body.classList.toggle('no-scroll');
+    this.querySelector('i').classList.toggle('fa-bars');
+    this.querySelector('i').classList.toggle('fa-times');
   });
 
+  document.addEventListener('click', function(e) {
+    if (mainNav.classList.contains('active') {
+      if (!mainNav.contains(e.target) && e.target !== menuToggle) {
+        mainNav.classList.remove('active');
+        body.classList.remove('no-scroll');
+        menuToggle.querySelector('i').className = 'fas fa-bars';
+      }
+    }
+  });
 
-// MENU
-const menuToggle = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('.main-nav');
-const body = document.body;
-
-menuToggle.addEventListener('click', function() {
-  mainNav.classList.toggle('active');
-  body.classList.toggle('no-scroll'); // Sayfa kaydırmayı engelle
-  
-  // İkon değişimi (bars ↔ times)
-  const icon = this.querySelector('i');
-  icon.classList.toggle('fa-bars');
-  icon.classList.toggle('fa-times');
-});
-
-// Menü dışına tıklandığında menüyü kapat
-document.addEventListener('click', function(e) {
-  if (!mainNav.contains(e.target) && e.target !== menuToggle) {
-    mainNav.classList.remove('active');
-    body.classList.remove('no-scroll');
-    const icon = menuToggle.querySelector('i');
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-  }
-});
-
-//YAZI EFEKTİ //
-
- const elements = document.querySelectorAll('.yazim'); // Tüm .yazim elementlerini seç
-  
+  // YAZI EFEKTİ
+  const elements = document.querySelectorAll('.yazim');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate');
-        observer.unobserve(entry.target); // Animasyon bir kez çalışsın
+        observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1 // Elementin %10'u göründüğünde tetikle
-  });
+  }, { threshold: 0.1 });
 
-  // Tüm .yazim elementlerini gözle
   elements.forEach(element => {
     observer.observe(element);
   });
-
 });
-
 
 
 </script>

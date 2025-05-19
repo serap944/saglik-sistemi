@@ -257,8 +257,6 @@ footer {
     text-decoration: none;
   }
 
-/* Mobil görünüm (768px ve altı) */
-@media (max-width: 768px) {
   .main {
     padding: 0.5rem;
   }
