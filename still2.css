@@ -77,7 +77,7 @@ display:inline-block;
       max-width: 1200px;
       width: 100%;
       margin: 0 auto;
-      padding: 0.2rem;
+      padding: 0;
 box-shadow:0 7px 12px rgba(0, 0, 0, 0.4);
     }
 
@@ -95,8 +95,8 @@ left:0;
 
        .kutu1 {
 width:80%;
-      padding:0;
-padding: 0.5rem;
+      padding:0.2rem;
+
       background: white;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
@@ -109,6 +109,7 @@ padding: 0.5rem;
       overflow: hidden; /* Taşan kısımları gizle */
       border-radius: 8px;
       background: #eee;
+        padding:0;
     }
 
     .kutu2 img {
@@ -139,7 +140,7 @@ object-fit:cover;
     }
 
 .kutu2box {
-padding:0.5rem;
+  padding:0.2rem;
    border-right: 4px solid #c795fc; 
    border-left: 4px solid #c795fc; 
       border-top-right-radius: 30%;
@@ -237,7 +238,7 @@ object-fit:cover;
     text-decoration: none;
   }
   .main {
-    padding: 0.1rem;
+    padding: 0;
   }
 
       article {
@@ -251,6 +252,10 @@ object-fit:cover;
         height: 300px; /* Mobilde sabit yükseklik */
         min-width: unset;
       }
+         .kutu1 .kutu3  {
+          margin:0.2rem;
+    
+      }
 
     }
 
@@ -258,6 +263,10 @@ object-fit:cover;
     @media (max-width: 480px) {
       .kutu2 {
         height: 250px;
+      }
+          .kutu1 .kutu3  {
+          margin:0.2rem;
+    
       }
     }
 
