@@ -80,7 +80,7 @@ display:inline-block;
       max-width: 1200px;
       width: 100%;
       margin: 0 auto;
-      padding: 1rem;
+      padding: 0.2rem;
 box-shadow:0 7px 12px rgba(0, 0, 0, 0.4);
     }
 
@@ -240,7 +240,7 @@ object-fit:cover;
     text-decoration: none;
   }
   .main {
-    padding: 0.5rem;
+    padding: 0.1rem;
   }
 
       article {
