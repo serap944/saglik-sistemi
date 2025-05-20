@@ -2,9 +2,6 @@
     html {
       box-sizing: border-box;
     }
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
     
     /* Temel Stiller */
     body {
@@ -93,13 +90,13 @@ left:0;
     }
 
     .yazi1 {
-      margin: 15px;
+      margin: 0;
     }
 
        .kutu1 {
 width:80%;
       padding:0;
-padding: 2rem;
+padding: 0.5rem;
       background: white;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
@@ -132,7 +129,7 @@ padding:0;
 
 }
  .kutu1box {
-padding:2rem;
+padding:0.5rem;
       background-color: #c795fc;
       border-top-right-radius: 30%;
       border-bottom-right-radius: 30%;
@@ -142,7 +139,7 @@ object-fit:cover;
     }
 
 .kutu2box {
-padding:2rem;
+padding:0.5rem;
    border-right: 4px solid #c795fc; 
    border-left: 4px solid #c795fc; 
       border-top-right-radius: 30%;
@@ -245,9 +242,11 @@ object-fit:cover;
 
       article {
         flex-direction: column;
+          margin:0;
       }
       
       .kutu2 .kutu2a  {
+          margin:0;
         width: 100%;
         height: 300px; /* Mobilde sabit yükseklik */
         min-width: unset;
