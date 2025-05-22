@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Ana Sayfa -->
   <url>
     <loc>https://noradark.com/</loc>
-    <lastmod>2024-05-15</lastmod>
+    <lastmod>2024-05-23</lastmod> <!-- Son güncelleme tarihi -->
     <priority>1.0</priority>
   </url>
+
+  <!-- Hakkımda Sayfası -->
   <url>
-    <loc>https://noradark.com/dis-sagligi</loc>
-    <lastmod>2024-05-15</lastmod>
-    <priority>0.8</priority>
+    <loc>https://noradark.com/hakkimda.html</loc>
+    <lastmod>2024-05-23</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Saç Ekimi Sayfası -->
+  <url>
+    <loc>https://noradark.com/sac.html</loc>
+    <lastmod>2024-05-23</lastmod>
+    <priority>0.8</priority> <!-- Daha yüksek öncelik (anahtar kelime potansiyeli) -->
   </url>
 </urlset>
