@@ -1,1 +1,44 @@
-permalink: pretty
+# Site Temel Ayarları
+title: Noradark Web Tasarım
+description: Profesyonel ve uygun fiyatlı web tasarım hizmetleri
+url: "https://www.noradark.com"  # Yeni domain (www ile)
+baseurl: ""  # Subpath kullanmıyorsanız boş bırakın
+
+# GitHub Pages Özel Ayarları
+remote_theme: jekyll-theme-minimal  # GitHub'da çalışması için bu kritik
+
+# Dil ve Lokal Ayarları
+locale: "tr_TR"
+language: "tr"
+timezone: "Europe/Istanbul"
+
+# Build Ayarları
+markdown: kramdown
+permalink: /:title/  # SEO için daha temiz URL yapısı
+future: false  # Gelecek tarihli içerik gösterme
+
+# Eklentiler (GitHub Pages destekli)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap-plugin  # jekyll-sitemap yerine bu daha stabil
+  - jekyll-feed
+  - jekyll-optional-front-matter
+
+# Google Analytics (GA4)
+google_analytics: "G-H7Z56BBYVV"  # TIRNAK İÇİNDE OLMALI
+
+# Varsayılanlar
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      author: "Noradark"
+      sitemap: true  # Sitemap'e dahil et
+
+# Sitemap öncelik ayarı (opsiyonel)
+sitemap:
+  priority: 0.8
+  changefreq: weekly
