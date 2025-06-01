@@ -1,299 +1,370 @@
-/* still1.css - Optimize Edilmiş Versiyon */
-/* Temel Stiller */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        /* TEMEL STİLLER */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f5f5f5;
-}
+        /* BAŞLIK ALANI */
+        .baslik-alani {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
 
-header {
-  background: linear-gradient(to right, #6a1b9a, #1a237e);
-  padding: 2rem;
-  position: relative;
-}
+        .ana-baslik {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
 
-.header-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center; /* Eklemeniz gerekiyor */
-  margin: 0 auto; /* Ortalamak için auto ekleyin */
-  max-width: 1200px; /* Maksimum genişlik ekleyin */
-  width: 100%; /* Tam genişlik */
-}
+        /* Mevcut kart stilini koru + ekstra form stil */
 
-.header-container a {
-display:inline-block;
-  text-decoration: none;
-  color: white; /* Renk eklemeyi unutmayın */
-} /* Burada kapanış süslü parantezi eksikti */
 
-.menu-toggle {
-  display: none;
-  background: none; /* 'background-color: none' yerine 'background: none' */
+/* Buton stilleri */
+.teklif-butonu {
+  background: #4CAF50;
+  color: white;
   border: none;
-  color: white;
-  font-size: 1.5rem; /* Boyut ekleyin */
-  cursor: pointer; /* İmleç tipi */
-  padding: 0.5rem; /* Padding ekleyin */
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.main-nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 1rem; /* Öğeler arası 1rem boşluk */
-}
 
-.main-nav li {
-  /* li öğeleri için ekstra margin gerekmez */
-}
+        /* MENÜ */
+        .menu-cubugu {
+            background-color: #34495e;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
 
-.main-nav a {
- display: inline-block; /* Veya block */
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: white;
- 
-  transition: all 0.3s ease;
-  border-radius: 3px;
-}
+        .menu-listesi {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
 
-.main-nav a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+        .menu-oge {
+            margin: 0 1rem;
+        }
 
-/* Ana İçerik */
+        .menu-baglantisi {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
 main {
-  max-width: 1200px;
-  margin: 2rem auto;   /* Dikeyde 2rem (32px) boşluk, yatayda otomatik (içeriği ortalar) */
-  padding: 0.5rem 1rem;
-box-shadow: 0 7px 12px rgba(0, 0, 0, 0.6);
+    
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
 }
 
-.kutu1 {
-  display: flex;
+.kart {  display: flex;
+    background-color: white;
+    margin:0;
   align-items: center;
-  width: 100%;
-gap: 1rem;
-  margin: 2rem 0;
-  padding: 0;
-  flex-wrap: nowrap;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.resim-tarafi {
-  display: flex;
-  width: 20%;
-margin:0;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.resim-tarafi img {
-  width: 100%;
-border-radius: 2rem;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.resim-tarafi img:hover{
-  transform: scale(1.05);
-}
-
-.yazim {
-  display: flex;
-  width: 80%;
-  border-left: solid 4px purple;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  transform: translateY(-100px);
-  opacity: 0; /* Başlangıçta görünmez olsun */
-  transition: transform 2s, opacity 2s; /* Geçiş efekti ekleyin */
-}
-
-.yazim.animate {
-  transform: translateX(0);
-  opacity: 1; /* Görünür hale gelsin */
-}
-
-.yazim:nth-child(1) { transition-delay: 0.1s; }
-.yazim:nth-child(2) { transition-delay: 0.3s; }
-.yazim:nth-child(3) { transition-delay: 0.5s; }
-
-/* DÜZELTİLMİŞ .tipmerkezleri STİLLERİ */
-.tipmerkezleri {
-display:flex;
-width:100%;
-align-items:center;
-  height: 250px; /* Sabit yükseklik */
-  overflow: hidden;
-  position: relative;
-  margin: 20px 0;
-}
-
-.kutut {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  height: 100%;
-flex-wrap: nowrap;
-align-items:center;
-gap:10px;
-}
-
-/* Bilgisayarda 4 resim yan yana */
-.kutut img {
-  width: calc(100% / 4);
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
-  border-radius: 5px;
-}
-
-
-/* Footer */
-footer {
-  background: linear-gradient(to right, #6a1b9a, #1a237e);
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  margin-top: auto;
-}
-
-
-
-
-
-/* Mobil görünüm */
-@media (max-width: 768px) {
-  .header-container {
-    flex-wrap: wrap;
-    padding: 0.5rem;
-  }
-
-  .menu-toggle {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(to right, #6a1b9a, #1a237e);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    order: 2;
-    z-index: 101;
-    margin-left: 10px;
-  }
+    align-items: stretch;
+}
+/* Mevcut stilleriniz */
+.karta {
+  width: 70%;
+  padding: 1rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
 
-  .main-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background: linear-gradient(to bottom, #6a1b9a, #1a237e);
-    padding: 5rem 1rem 1rem;
-    transition: right 0.3s ease-out;
-    z-index: 100;
-    overflow-y: auto;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-  }
+.karta.hareketi {
+  transform: translateY(0);
+  opacity: 1;
+}
 
-  .main-nav.active {
-    right: 0;
-  }
+/* h2 için animasyonlu alt çizgi efekti */
+.karta.hareketi h2 {
+  animation: fadeIn 0.5s ease-out forwards;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px; /* Çizgi ile metin arası boşluk */
+}
 
-  .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    padding-top: 1rem;
-  }
+/* Alt çizgi animasyonu */
+.karta.hareketi h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3498db; /* Çizgi rengi */
+  animation: underlineExpand 0.5s 0.5s ease-out forwards; /* 0.5s gecikmeli */
+}
 
-  .main-nav li {
+/* p elementi animasyonu (mevcut) */
+.karta.hareketi p {
+  animation: fadeIn 0.5s 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Yeni alt çizgi animasyonu */
+@keyframes underlineExpand {
+  from { width: 0; left: 50%; }
+  to { width: 100%; left: 0; }
+}
+.kartb {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 30px;
+}
+
+.kartb img {
+    object-fit: cover;
     width: 100%;
-  }
+    border-radius: 30px; /* Görsel için de border-radius */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+ 
+}
 
-  .main-nav a {
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+                /* Önceki CSS kodlarına eklemeler */
+       
+        
+        .kart:target {
+            animation: vurgula 1.5s;
+        }
+
+        
+        @keyframes vurgula {
+            0% { background-color: rgba(52, 152, 219, 0.1); }
+            100% { background-color: transparent; }
+        }
+   
+
+        
+.teklif-formu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0;
+    padding: 2.5rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('images/resim4.jpg') center/cover no-repeat;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.teklif-formu h2 {
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.form-group {
+    width: 70%;
+        
+}
+
+.teklif-formu label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.teklif-formu input,
+.teklif-formu textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.teklif-formu input:focus,
+.teklif-formu textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.kvkk-onay {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 0.75rem 1rem;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-
-  .main-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .main-nav i {
-    margin-left: 10px;
-    font-size: 1.2rem;
-  }
-
-  h1 {
-    order: 1;
-    font-size: 1.5rem;
-    margin-right: auto;
-    padding: 0.5rem;
-  }
-
-  h1 a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .main {
-    padding: 0.5rem;
-  }
-  
-  .kutu1 {
-    flex-direction: column;
-    margin-bottom: 1.5rem;
-  }
-  
-  .resim-tarafi {
-    width: 100%;
-    order: 1; /* Resmi üste al */
-  }
-  
-  .resim-tarafi img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .yazim {
-    width: 100%;
-    padding: 1rem;
-    order: 2; /* Yazıyı alta al */
-    border-left: none;
-    border-top: solid 4px purple;
-  }
-  
-  /* Özel durum: Resim sağda olan kutular için */
-  .kutu1:nth-child(4) .resim-tarafi,
-  .kutu1:nth-child(5) .resim-tarafi {
-    order: 2;
-  }
-  
-  .kutu1:nth-child(4) .yazim,
-  .kutu1:nth-child(5) .yazim {
-    order: 1;
-    border-top: solid 4px purple;
-    border-left: none;
-  }
+    gap: 10px;
+    margin: 1rem 0;
 }
+
+.kvkk-onay input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.kvkk-onay a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.kvkk-onay a:hover {
+    text-decoration: underline;
+}
+
+.gonder {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.gonder:hover {
+    background-color: #45a049;
+}
+
+
+
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .teklif-formu {
+        padding: 1.5rem;
+    }
+    
+    .teklif-formu h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ALT BİLGİ */
+.alt-bilgi {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-a, .footer-b {
+    list-style: none;
+    
+
+}
+
+.footer-b {
+    display: block;
+    margin:auto 0;
+}
+
+.footer-b a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-b a:hover {
+    text-decoration: underline;
+    color: #3498db;
+}
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 768px) {
+            .menu-listesi {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-oge {
+                margin: 0.5rem 0;
+            }
+
+            .ana-baslik {
+                font-size: 2rem;
+            }
+            .şcerik-bolumu{
+                margin:0 auto;
+
+            }
+            .kart{
+                display:block;
+                flex-direction: column;
+                margin: 1rem;
+            }
+            .kart img{
+width: 100%;
+height:auto;
+
+            }
+        }
+          /* Basit Modal Stilleri */
+ /* Bildirim Stilleri */
+  .bildirim {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+  }
+
+  .bildirim.goster {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bildirim.success {
+    background-color: #28a745;
+  }
+
+  .bildirim.error {
+    background-color: #dc3545;
+  }
+
+  /* Animasyon */
+  @keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
