@@ -6,4 +6,4 @@ Disallow: /_layouts/
 Disallow: /_includes/
 
 # Sitemap (www ile tutarlı şekilde)
-Sitemap: https://noradark.com/sitemap.xml
+Sitemap: https://www.noradark.com/sitemap.xml
